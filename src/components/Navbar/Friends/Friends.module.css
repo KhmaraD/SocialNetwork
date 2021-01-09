@@ -1,0 +1,30 @@
+.friendsWrapper {}
+
+.friends {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.title {
+    margin-top: 100px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+}
+
+.friendsItem img {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+.friendsItem {
+    margin: 0 auto;
+}
+
+.name {
+    color: white;
+    padding-bottom: 10px;
+}
