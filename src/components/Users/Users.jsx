@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./Users.module.css";
 
 const Users = (props) => {
-debugger;
     if (props.users.length === 0 ) {
         props.setUsers( [
             {
@@ -20,26 +19,10 @@ debugger;
                 fullName: 'Lena',
                 status: 'I am a boss too',
                 location: {city: 'Kyiv', country: 'Ukraine'}
-            },
-            // {
-            //     id: 3,
-            //     photoUrl: 'https://www.denofgeek.com/wp-content/uploads/2019/06/vikings-season-6-ragnar.jpg?fit=670%2C377',
-            //     followed: true,
-            //     fullName: 'Ihor',
-            //     status: 'I am not a boss',
-            //     location: {city: 'Dnipro', country: 'Ukraine'}
-            // },
-            // {
-            //     id: 4,
-            //     photoUrl: 'https://www.denofgeek.com/wp-content/uploads/2019/06/vikings-season-6-ragnar.jpg?fit=670%2C377',
-            //     followed: true,
-            //     fullName: 'Lion',
-            //     status: 'I dont now who i am',
-            //     location: {city: 'Katovice', country: 'Poland'}
-            // }
+            }
         ])
     }
-debugger;
+
     return (
         <div>
             {
