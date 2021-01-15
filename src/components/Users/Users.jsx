@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Users.module.css";
 
 const Users = (props) => {
+debugger;
     if (props.users.length === 0 ) {
         props.setUsers( [
             {
@@ -38,7 +39,7 @@ const Users = (props) => {
             // }
         ])
     }
-
+debugger;
     return (
         <div>
             {
