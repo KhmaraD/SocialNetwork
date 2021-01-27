@@ -24,4 +24,4 @@ let mapStateToProps = (state) => ({
     profile: state.profilePage.profile
 });
 
-export default connect (mapStateToProps, {setUserProfile})(ProfileContainer);
+export default connect(mapStateToProps, {setUserProfile}) (ProfileContainer);
