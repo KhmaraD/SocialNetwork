@@ -13,8 +13,11 @@ const ProfileInfo = (props) => {
                  src="https://women4it.eu/wp-content/uploads/2020/02/Canva-html-php-java-source-code-2-scaled-e1581350484417-1600x420.jpg"
                  alt="img"/>
             <div className={s.description}>
-                <img src={props.profile.photos.large} />
-                ava + description
+                <img src={props.profile.photos.large} alt="img"/>
+                <h1>{props.profile.fullName}</h1>
+                <p>{props.profile.aboutMe}</p>
+                <p>{props.profile.contacts.facebook}</p>
+                <p>{props.profile.contacts.instagram}</p>
             </div>
         </div>
     );
