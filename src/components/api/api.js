@@ -27,19 +27,13 @@ export const usersAPI = {
                 return response.data;
             })
     },
-    getUserProfile(userId) {
-        if (!userId) {
-            userId = 14408;
-        }
-        return instance.get(`profile/` + userId)
-            .then(response => {
-                return response.data;
-            });
+    getProfile(userId) {
+        return instance.get(`profile/` + userId);
     },
-    getAuth() {
-        return instance.get(`auth/me`)
-            .then(response => {
-                return response.data;
-            })
+}
+
+export const authAPI = {
+    me() {
+        return instance.get(`auth/me`);
     }
 }
