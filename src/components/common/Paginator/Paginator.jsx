@@ -1,7 +1,5 @@
 import React from "react";
 import styles from "./Paginator.module.css";
-import userPhoto from "../../../assets/images/user.png";
-import {NavLink} from "react-router-dom";
 
 const Paginator = (props) => {
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
