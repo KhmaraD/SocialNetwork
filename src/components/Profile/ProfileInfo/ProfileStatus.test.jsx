@@ -9,16 +9,27 @@ describe("Profile status component", () => {
         expect(instance.state.status).toBe("it-kamasutra.com");
     });
 
-    test("after creation span should be displayed", () => {
+    test("after creation span shouldn't be displayed", () => {
         const component = create(<ProfileStatus status="it-kamasutra.com" />);
         const root = component.root;
-        const span = root.findByType("span");
-        expect(span).not.toBeNull();
+
+        expect( () => {
+            const input = root.findByType("input");
+        }).toThrow();
     });
     test("after creation span should contains correct status", () => {
         const component = create(<ProfileStatus status="it-kamasutra.com" />);
         const root = component.root;
-        const span = root.findByType("span");
-        expect(span.innerText).toBe("it-kamasutra.com");
+        let span = root.findByType("span");
+        expect(span.children[0]).toBe("it-kamasutra.com");
+    });
+
+    test("input should be displayed in editMode instead of span", () => {
+        const component = create(<ProfileStatus status="it-kamasutra.com" />);
+        const root = component.root;
+        let span = root.findByType("span");
+        span.props.onDoubleClick();
+        let input = root.findByType("input");
+        expect(input.props.value).toBe("it-kamasutra.com");
     });
 });
