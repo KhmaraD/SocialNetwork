@@ -1,85 +1,70 @@
-import React from 'react';
+import React, {useState} from 'react';
 import s from './ProfileInfo.module.css';
 import Preloader from "../../common/Preloader/Preloader";
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 import userPhoto from "../../../assets/images/user.png";
+import ProfileDataForm from "./ProfileDataForm";
 
-const ProfileInfo = (props) => {
-    if (!props.profile) {
+const ProfileInfo = ({isOwner, profile, savePhoto, status, updateStatus, saveProfile}) => {
+
+    let [editMode, setEditMode] = useState(false);
+
+    if (!profile) {
         return <Preloader />
     }
 
     const onMainPhotoSelected = (e) => {
         if (e.target.files.length) {
-            props.savePhoto(e.target.files[0])
+            savePhoto(e.target.files[0])
         }
+    }
+
+    const onSubmit = (formData) => {
+        saveProfile(formData).then(
+            () => {
+                setEditMode(false);
+            }
+        );
     }
 
     return (
         <div>
-            {/*<img className={s.coverImg}*/}
-            {/*     src="https://women4it.eu/wp-content/uploads/2020/02/Canva-html-php-java-source-code-2-scaled-e1581350484417-1600x420.jpg"*/}
-            {/*     alt="img"/>*/}
             <div className={s.description}>
-                <img src={props.profile.photos.large || userPhoto } alt="photo" className={s.mainPhoto} />
-                { props.isOwner && <input type="file" onChange={onMainPhotoSelected}/>}
+                <img src={profile.photos.large || userPhoto } alt="photo" className={s.mainPhoto} />
+                { isOwner && <input type="file" onChange={onMainPhotoSelected}/>}
 
-                {/*{ editMode ? <ProfileDataForm profile={props.profile}/> : <ProfileData profile={props.profile}/> }*/}
-                <ProfileData profile={props.profile}/>
+                { editMode
+                    ? <ProfileDataForm initialValues={profile} profile={profile} onSubmit={onSubmit} />
+                    : <ProfileData goToEditMode={ () => {setEditMode(true)} } profile={profile} isOwner={isOwner}/> }
 
-                <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
+                <ProfileStatusWithHooks status={status} updateStatus={updateStatus}/>
 
             </div>
         </div>
     );
 }
 
-const ProfileData = (props) => {
+const ProfileData = ({isOwner, profile, goToEditMode}) => {
     return (
         <div>
+            { isOwner && <div><button onClick={goToEditMode}>Edit</button></div> }
             <div>
-                <b>Full name</b>: {props.profile.fullName}
+                <b>Full name</b>: {profile.fullName}
             </div>
             <div>
-                <b>looking for a job</b>: {props.profile.lookingForAJob ? "yes" : "no"}
+                <b>looking for a job</b>: {profile.lookingForAJob ? "yes" : "no"}
             </div>
-            { props.profile.lookingForAJob &&
+            { profile.lookingForAJob &&
             <div>
-                <b>My profession skills</b>: {props.profile.lookingForAJobDescription}
+                <b>My profession skills</b>: {profile.lookingForAJobDescription}
             </div>
             }
             <div>
-                <b>About me</b>:
+                <b>About me</b>: {profile.aboutMe}
             </div>
             <div>
-                <b>Contacts: </b> {Object.keys(props.profile.contacts).map(key => {
-                return <Contact key={key} contactTitle={key} contactValue={props.profile.contacts[key] }/>
-            })}
-            </div>
-        </div>
-    );
-}
-
-const ProfileDataForm = (props) => {
-    return (
-        <div>
-            <div>
-                <b>Full name</b>: {props.profile.fullName}
-            </div>
-            <div>
-                <b>looking for a job</b>: {props.profile.lookingForAJob ? "yes" : "no"}
-            </div>
-            { props.profile.lookingForAJob &&
-            <div>
-                <b>My profession skills</b>: {props.profile.lookingForAJobDescription}
-            </div>
-            }
-            <div>
-                <b>About me</b>:
-            </div>
-            <div>
-                <b>Contacts: </b> {Object.keys(props.profile.contacts).map(key => {
-                return <Contact key={key} contactTitle={key} contactValue={props.profile.contacts[key] }/>
+                <b>Contacts: </b> {Object.keys(profile.contacts).map(key => {
+                return <Contact key={key} contactTitle={key} contactValue={profile.contacts[key] }/>
             })}
             </div>
         </div>
