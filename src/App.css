@@ -15,5 +15,8 @@
 
 .app-wrapper-content {
     grid-area: c;
-    background-color: cornflowerblue;
+    /*background-color: #E2EAF4;*/
+    /*background: linear-gradient(90deg, rgba(34,50,63,1) 0%, rgba(52,152,219,1) 100%);*/
+    background: linear-gradient(to right, #22323f, #3498db);
+
 }

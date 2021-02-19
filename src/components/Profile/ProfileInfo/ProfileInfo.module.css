@@ -5,12 +5,37 @@
 
 .description {
     padding: 10px;
+    display: flex;
+    color: #E2EAF4;
+    /*flex-wrap: wrap;*/
 }
 
 .mainPhoto {
-    max-width: 200px;
+    max-width: 250px;
+    max-height: 250px;
+    /*width: 40%;*/
+    /*height: 40%;*/
+}
+
+.photoWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.fullName {
+    font-size: 30px;
+    font-weight: 900;
 }
 
 .contact {
     padding-left: 20px;
+}
+
+.lookingForAJob {
+    font-size: 20px;
+}
+
+.editProfileInfoBtn {
+    float: right;
+    margin-right: 15px;
 }

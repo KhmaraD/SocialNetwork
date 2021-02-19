@@ -30,15 +30,16 @@ const ProfileInfo = ({isOwner, profile, savePhoto, status, updateStatus, savePro
     return (
         <div>
             <div className={s.description}>
-                <img src={profile.photos.large || userPhoto } alt="photo" className={s.mainPhoto} />
-                { isOwner && <input type="file" onChange={onMainPhotoSelected}/>}
+                <div className={s.photoWrapper}>
+                    <img src={profile.photos.large || userPhoto } alt="photo" className={s.mainPhoto} />
+                    { isOwner && <input type="file" onChange={onMainPhotoSelected}/>}
+                    <ProfileStatusWithHooks status={status} updateStatus={updateStatus}/>
+                </div>
+
 
                 { editMode
                     ? <ProfileDataForm initialValues={profile} profile={profile} onSubmit={onSubmit} />
                     : <ProfileData goToEditMode={ () => {setEditMode(true)} } profile={profile} isOwner={isOwner}/> }
-
-                <ProfileStatusWithHooks status={status} updateStatus={updateStatus}/>
-
             </div>
         </div>
     );
@@ -47,24 +48,27 @@ const ProfileInfo = ({isOwner, profile, savePhoto, status, updateStatus, savePro
 const ProfileData = ({isOwner, profile, goToEditMode}) => {
     return (
         <div>
-            { isOwner && <div><button onClick={goToEditMode}>Edit</button></div> }
-            <div>
-                <b>Full name</b>: {profile.fullName}
+            {isOwner && <div className={s.editProfileInfoBtn}>
+                <button onClick={goToEditMode}>Edit profile info</button>
+            </div>}
+            <div className={s.fullName}>
+                {profile.fullName}
             </div>
-            <div>
-                <b>looking for a job</b>: {profile.lookingForAJob ? "yes" : "no"}
+            <div className={s.lookingForAJob}>
+                {profile.lookingForAJob ? "I am looking for a job" : "I have a job"}
             </div>
-            { profile.lookingForAJob &&
+            {profile.lookingForAJob &&
             <div>
                 <b>My profession skills</b>: {profile.lookingForAJobDescription}
             </div>
             }
+
             <div>
                 <b>About me</b>: {profile.aboutMe}
             </div>
             <div>
                 <b>Contacts: </b> {Object.keys(profile.contacts).map(key => {
-                return <Contact key={key} contactTitle={key} contactValue={profile.contacts[key] }/>
+                return <Contact key={key} contactTitle={key} contactValue={profile.contacts[key]}/>
             })}
             </div>
         </div>
