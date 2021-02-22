@@ -4,38 +4,97 @@
 }
 
 .description {
-    padding: 10px;
     display: flex;
-    color: #E2EAF4;
-    /*flex-wrap: wrap;*/
+    padding: 10px;
+    color: white;
 }
 
-.mainPhoto {
-    max-width: 250px;
-    max-height: 250px;
-    /*width: 40%;*/
-    /*height: 40%;*/
+.profileDataWrapper {
+    flex-grow: 1;
+    flex-direction: column;
+    padding: 10px;
+    background-color: #2F7AAD;
+    display: flex;
+}
+
+.nameWrapper button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: white;
+    float: right;
+    padding: 5px;
+}
+
+.editProfileInfoBtn :hover {
+    color: darkgrey;
+}
+
+.nameWrapper {
+
+}
+
+.aboutMeWrapper {
+    justify-content: space-between;
+    display: flex;
+    margin-top: 5px;
+}
+
+.aboutMe {
+    width: 50%;
+}
+
+.contactsWrapper {
+    width: 50%;
+}
+
+.contact {
+    padding-left: 20px;
+    padding-top: 5px;
+}
+
+.contact a {
+    text-decoration: none;
+    color: darkgrey;
 }
 
 .photoWrapper {
     display: flex;
     flex-direction: column;
+    background-color: #2F7AAD;
+    padding: 10px;
+    margin-right: 10px;
 }
 
-.fullName {
-    font-size: 30px;
+.mainPhoto {
+    max-width: 250px;
+    max-height: 250px;
+}
+
+.fullName h1 {
     font-weight: 900;
-}
-
-.contact {
-    padding-left: 20px;
+    margin: 0;
+    padding-bottom: 5px;
 }
 
 .lookingForAJob {
     font-size: 20px;
+    padding-bottom: 10px;
+}
+
+.skills {
+    padding-bottom: 10px;
 }
 
 .editProfileInfoBtn {
-    float: right;
-    margin-right: 15px;
+
 }
+
+.status {
+    font-size: 18px;
+    color: darkgrey;
+    cursor: pointer;
+    padding-bottom: 10px;
+}
+
+
