@@ -68,7 +68,7 @@ const ProfileData = ({isOwner, profile, goToEditMode, updateStatus, status}) => 
 
                     {profile.lookingForAJob &&
                     <div className={s.skills}>
-                        <b>My profession skills</b>: <br/>{profile.lookingForAJobDescription}
+                        <b>My professional skills</b>: <br/>{profile.lookingForAJobDescription}
                     </div>
                     }
 

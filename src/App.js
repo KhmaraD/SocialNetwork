@@ -11,7 +11,7 @@ import Login from "./components/Login/Login";
 import {connect} from "react-redux";
 import Preloader from "./components/common/Preloader/Preloader";
 import {initializeApp} from "./redux/app-reducer";
-import {withRouter} from "react-router";
+import {Redirect, Switch, withRouter} from "react-router";
 import {compose} from "redux";
 import {withSuspense} from "./hoc/withSuspense";
 
@@ -33,20 +33,30 @@ const App = (props) => {
             <HeaderContainer/>
             <Navbar/>
             <div className='app-wrapper-content'>
-                <Route path='/login'
-                       render={() => <Login/>}/>
-                <Route path='/dialogs'
-                       render={withSuspense(DialogsContainer)} />
-                <Route path='/profile/:userId?'
-                       render={withSuspense(ProfileContainer)}/>
-                <Route path='/users'
-                       render={() => <UsersContainer/>}/>
-                <Route path='/music'
-                       render={() => <Music/>}/>
-                <Route path='/news'
-                       render={() => <News/>}/>
-                <Route path='/settings'
-                       render={() => <Settings/>}/>
+                <Switch>
+                    {/*<Route exact path='/'*/}
+                    {/*       render={() => <StartPage/>}/>*/}
+                    {/*<Route exact path="/">*/}
+                    {/*    {props.isAuth ? <Redirect to="/profile" /> : <Redirect to="/login" />}*/}
+                    {/*</Route>*/}
+                    <Redirect exact from="/" to="/profile" />
+                    <Route path='/login'
+                           render={() => <Login/>}/>
+                    <Route path='/dialogs'
+                           render={withSuspense(DialogsContainer)}/>
+                    <Route path='/profile/:userId?'
+                           render={withSuspense(ProfileContainer)}/>
+                    <Route path='/users'
+                           render={() => <UsersContainer/>}/>
+                    <Route path='/music'
+                           render={() => <Music/>}/>
+                    <Route path='/news'
+                           render={() => <News/>}/>
+                    <Route path='/settings'
+                           render={() => <Settings/>}/>
+                    <Route path='*'
+                           render={() => <div>404 NOT FOUND</div>}/>
+                </Switch>
             </div>
         </div>
     );
