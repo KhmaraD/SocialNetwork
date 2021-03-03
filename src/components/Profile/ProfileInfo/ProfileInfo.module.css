@@ -13,7 +13,7 @@
     flex-grow: 1;
     flex-direction: column;
     padding: 10px;
-    background-color: #2F7AAD;
+    background-color: #4A667A;
     display: flex;
 }
 
@@ -61,7 +61,7 @@
 .photoWrapper {
     display: flex;
     flex-direction: column;
-    background-color: #2F7AAD;
+    background-color: #4A667A;
     padding: 10px;
     margin-right: 10px;
 }

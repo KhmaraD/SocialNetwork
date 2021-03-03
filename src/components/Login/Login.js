@@ -8,7 +8,6 @@ import {Redirect} from "react-router";
 import styleForm from "../common/FormsControls/FormsControls.module.css";
 import style from "./Login.module.css"
 
-
 const LoginForm = ({handleSubmit, error, captchaUrl}) => {
     return (
         <form onSubmit={handleSubmit}>

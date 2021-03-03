@@ -1,7 +1,7 @@
 .header {
   grid-area: h;
   /*background-color: #405898;*/
-  background: linear-gradient(90deg, rgba(52,152,219,1) 0%, rgba(34,50,63,1) 100%);
+  background: #374C5B;
   display: flex;
   justify-content: space-between;
 }
