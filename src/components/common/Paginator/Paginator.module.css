@@ -1,18 +1,37 @@
 .paginator {
+    color: #E2EAF4;
     margin: 10px;
+    text-align: center;
 }
 .paginator button {
     cursor: pointer;
+    margin: 0 5px;
+    border: 1px solid grey;
+    padding: 5px;
 }
 
+.paginator button:hover {
+    background-color: #4A667A;
+    color: #3497DB;
+
+}
 
 .pageNumber {
-    padding: 2px;
+    padding: 5px;
     border: 1px solid grey;
     cursor: pointer;
 }
 
+.pageNumber:hover {
+    background-color: #4A667A;
+}
+
+.pageNumber + .pageNumber {
+    margin-left: 3px;
+}
+
 .pageNumber.selectedPage {
     font-weight: bold;
-    border-color: black;
+    border-color: #3497DB;
+    color: #3497DB;
 }
