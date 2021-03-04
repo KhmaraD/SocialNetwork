@@ -1,10 +1,10 @@
 .dialogsItems a {
     text-decoration: none;
-    color: black;
+    color: #E2EAF4;
 }
 
 .dialogsItems a.active {
-    color: gold;
+    color: #3497DB;
 }
 
 .dialogsItems img {

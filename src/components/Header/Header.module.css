@@ -42,5 +42,6 @@
 }
 
 .logButton:hover {
-  font-weight: 900;
+  color: #3497DB;
+  cursor: pointer;
 }
