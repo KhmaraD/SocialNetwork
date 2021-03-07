@@ -1,15 +1,22 @@
 .usersPhoto {
     width: 100px;
-
 }
 
 .usersWrapper {
     color: #E2EAF4;
-    /*display: flex;*/
-    /*flex-flow: column wrap;*/
-    /*justify-content: space-around;*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
 }
 
 .userItem {
+    margin-left: 50px;
+    margin-bottom: 30px;
+}
 
+
+
+.usersPageWrapper {
+    margin: 20px 40px;
 }

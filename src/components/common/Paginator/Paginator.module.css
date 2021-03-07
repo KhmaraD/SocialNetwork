@@ -1,8 +1,10 @@
 .paginator {
     color: #E2EAF4;
-    margin: 10px;
+    margin: 30px;
     text-align: center;
+
 }
+
 .paginator button {
     cursor: pointer;
     margin: 0 5px;
@@ -27,7 +29,7 @@
 }
 
 .pageNumber + .pageNumber {
-    margin-left: 3px;
+    margin-left: 5px;
 }
 
 .pageNumber.selectedPage {

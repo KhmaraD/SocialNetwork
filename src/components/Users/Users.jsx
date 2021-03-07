@@ -6,7 +6,7 @@ import style from "./Users.module.css"
 const Users = (props) => {
 
     return (
-        <div>
+        <div className={style.usersPageWrapper}>
             <Paginator currentPage={props.currentPage}
                        onPageChanged={props.onPageChanged}
                        totalItemsCount={props.totalUsersCount}
