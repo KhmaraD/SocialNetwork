@@ -7,7 +7,7 @@
 
 .messages {
     border-radius: 10px;
-    background-color: #4A667A;
+    background-color: #313335;
     padding: 20px;
 }
 
@@ -20,17 +20,16 @@
 
 .messageFormBtn {
     margin-left: 10px;
-    border-radius: 3px;
+    font-size: 15px;
+    padding: 3px 20px;
     border: none;
-    padding: 4px 8px;
-    background-color: #ECF0F1;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 .messageFormBtn:hover {
-    /*background-color: #374C5B;*/
-    color: #3497DB;
-    cursor: pointer;
-    /*border: 1px solid #ECF0F1;*/
+    background-color: #486377;
+    color: #E2EAF4;
 }
 
 .dialogsItems {}
