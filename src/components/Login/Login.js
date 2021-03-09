@@ -20,18 +20,6 @@ const LoginForm = ({handleSubmit, error, captchaUrl}) => {
             {/*           component={Input}*/}
             {/*           validate={required}/>*/}
             {/*</div>*/}
-            {/*<div>*/}
-            {/*    <Field placeholder={"Password"}*/}
-            {/*           name={"password"}*/}
-            {/*           component={Input}*/}
-            {/*           validate={required}*/}
-            {/*           type={"password"}/>*/}
-            {/*</div>*/}
-            {/*<div>*/}
-            {/*    <Field component={Input}*/}
-            {/*           name={"rememberMe"}*/}
-            {/*           type={"checkbox"}/>remember me*/}
-            {/*</div>*/}
             {captchaUrl && <img src={captchaUrl} alt="captcha"/>}
             {captchaUrl && createField("Symbols from image", "captcha", [required], Input)}
 
