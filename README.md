@@ -1,3 +1,14 @@
+# Social Network
+
+Stack:
+- React
+- Redux
+- React Router
+- Axios
+- redux-thunk
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
