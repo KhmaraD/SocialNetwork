@@ -1,14 +1,10 @@
 import React from 'react';
 import s from './Header.module.css';
 import {NavLink} from "react-router-dom";
-// import logo from "../../assets/images/logo.png";
-import logo from "../../assets/images/social_network.png";
 
 const Header = (props) => {
     return (
         <header className={s.header}>
-            {/*<img src={logo} alt="logo"/>*/}
-            {/*<img src={logo} alt="logo"/>*/}
             <div className={s.logo}>
                 the Social Network
             </div>
